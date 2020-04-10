@@ -3,15 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package BaiTap1;
-import BaiTap1.CaNhan;
+package BaiTap2_BaiTapJava;
+
+import BaiTap1_BaiTapJava.NhanVien;
+import java.util.ArrayList;
 
 /**
  *
  * @author levan
  */
-public interface IQLDS {
-    public int them(CaNhan p);
-    public int xoa(String ten);
-    public void inDS();
+public interface IQuanLy {
+    void them(NhanVien nv);
+    void inDS(ArrayList<NhanVien> dsnhanvien);
 }
