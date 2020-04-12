@@ -13,29 +13,33 @@ import java.util.ArrayList;
  */
 public class QLDS implements IQLDS{
 
-    ArrayList<CaNhan> dscanhan ;
+    ArrayList<CaNhan> dscanhan = new ArrayList() ;
     // thêm constructer
 
+    public QLDS() {
+    }
+
+    
+    
     public QLDS(ArrayList<CaNhan> dscanhan) {
         this.dscanhan = dscanhan;
     }
     
     @Override
-    public int them(CaNhan p) {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void them(CaNhan p) {
         dscanhan.add(p);
-        return 1;
     }
 
     @Override
-    public int xoa(String ten) {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    
+    public void xoa(String ten) {
+        dscanhan.remove(ten);
     }
 
     @Override
     public void inDS() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        for(int i = 0; i< dscanhan.size(); i++){
+            dscanhan.get(i).HienThiTT();
+      }
     }
     
 }

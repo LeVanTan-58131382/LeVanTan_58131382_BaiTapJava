@@ -39,11 +39,16 @@ public class HocSinh extends CaNhan{
     
     
     
- // alt insert => implement method HienThiTT()
-    
+ // alt insert => override method HienThiTT()
+
     @Override
-    public String HienThiTT() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void HienThiTT() {
+        super.HienThiTT(); //To change body of generated methods, choose Tools | Templates.
+        // dòng trên sẽ thực hiện in danh sách thông tin cơ bản
+        System.out.println("Lớp: " + this.getLop());
+        System.out.println("Năng khiếu: " + this.getNangkhieu());
     }
+    
+    
     
 }

@@ -11,7 +11,7 @@ import BT1.CaNhan;
  * @author levan
  */
 public interface IQLDS {
-    public int them(CaNhan p);
-    public int xoa(String ten);
+    public void them(CaNhan p);
+    public void xoa(String ten);
     public void inDS();
 }

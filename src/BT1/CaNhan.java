@@ -24,12 +24,7 @@ public abstract class CaNhan {
         this.diaChi = diaChi;
         this.sdt = sdt;
     } // hàm constructer có tham số
-    
-    
-    
-    public abstract String HienThiTT();
-    // thêm getter setter
-
+   
     public String getHoTen() {
         return hoTen;
     }
@@ -61,5 +56,14 @@ public abstract class CaNhan {
     public void setSdt(String sdt) {
         this.sdt = sdt;
     }
+    
+    public void HienThiTT(){
+         System.out.println("Họ tên: " + this.getHoTen());
+         System.out.println("Tuổi: " + this.getTuoi());
+         System.out.println("Địa chỉ: " + this.getDiaChi());
+         System.out.println("SDT: " + this.getSdt());
+        
+    }
+    
     
 }
