@@ -11,55 +11,25 @@ package BaiTap4_BaiTapJava;
  */
 public class ChuyenXe {
     
-    public String maSoChuyen; // mã số chuyến
-    public String hoTenTaiXe;
-    public String soXe;
-    public float doanhThu;
+    String maSoChuyen; // mã số chuyến
+    String hoTenTaiXe;
+    String soXe;
+    float doanhThu;
 
     public ChuyenXe() {
     }
     
-    
-
     public ChuyenXe(String maSoChuyen, String hoTenTaiXe, String soXe, float doanhThu) {
         this.maSoChuyen = maSoChuyen;
         this.hoTenTaiXe = hoTenTaiXe;
         this.soXe = soXe;
         this.doanhThu = doanhThu;
     }
-
-    public String getMaSoChuyen() {
-        return maSoChuyen;
-    }
-
-    public void setMaSoChuyen(String maSoChuyen) {
-        this.maSoChuyen = maSoChuyen;
-    }
-
-    public String getHoTenTaiXe() {
-        return hoTenTaiXe;
-    }
-
-    public void setHoTenTaiXe(String hoTenTaiXe) {
-        this.hoTenTaiXe = hoTenTaiXe;
-    }
-
-    public String getSoXe() {
-        return soXe;
-    }
-
-    public void setSoXe(String soXe) {
-        this.soXe = soXe;
-    }
-
-    public float getDoanhThu() {
-        return doanhThu;
-    }
-
-    public void setDoanhThu(float doanhThu) {
-        this.doanhThu = doanhThu;
-    }
     
-    
-    
+    public void inDS(){
+         System.out.println("Mã số chuyến: " + this.maSoChuyen);
+            System.out.println("Họ tên tài xế: " + this.hoTenTaiXe);
+            System.out.println("Số xe: " + this.soXe);
+            System.out.println("Doanh thu: " + this.doanhThu);
+    }  
 }

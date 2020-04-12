@@ -12,54 +12,45 @@ import java.util.ArrayList;
  * @author levan
  */
 public class QuanLyChuyenXe{
-    ArrayList<ChuyenXe> dschuyenxe ;
+    ArrayList<ChuyenXe> dschuyenxe = new ArrayList() ;
+    public void addChuyenXe(ChuyenXe chuyenXe){
+        this.dschuyenxe.add(chuyenXe);
+    }
 
-    public QuanLyChuyenXe(ArrayList<ChuyenXe> dschuyenxe) {
-        this.dschuyenxe = dschuyenxe;
+    public QuanLyChuyenXe() {
     }
     
-    
-    
-    public void themChuyenXe(ChuyenXe chuyenxe){
-        dschuyenxe.add(chuyenxe);
-    }
-    
-    public void xuatDsChuyenXe(ArrayList<ChuyenXe> dschuyenxe){
-        for(int i = 0; i< dschuyenxe.size(); i++){
-            System.out.println("Mã số chuyến: " + dschuyenxe.get(i).getMaSoChuyen());
-            System.out.println("Họ tên tài xế: " + dschuyenxe.get(i).getHoTenTaiXe());
-            System.out.println("Số xe: " + dschuyenxe.get(i).getSoXe());
-            System.out.println("Doanh thu: " + dschuyenxe.get(i).getDoanhThu());
-           
-            System.out.println("---------------------------------");
-      }
-    }
-    
-    public float tongDoanhThuXeNoiThanh(ArrayList<ChuyenXe> dschuyenxe){
-        float tongDoanhThu = 0;
-        for(int i = 0; i< dschuyenxe.size(); i++){
-            if(dschuyenxe.get(i) instanceof ChuyenXeNoiThanh){
-                tongDoanhThu = tongDoanhThu + dschuyenxe.get(i).getDoanhThu();
-            }
+    public void xuatTTDS(){
+        for(int i = 0; i < dschuyenxe.size(); i++){
+            dschuyenxe.get(i).inDS();
         }
-        return tongDoanhThu;
     }
     
-    public float tongDoanhThuXeNgoaiThanh(ArrayList<ChuyenXe> dschuyenxe){
-        float tongDoanhThu = 0;
-        for(int i = 0; i< dschuyenxe.size(); i++){
+    public void tongDanhThuTungLoaiXe(){
+        double tongDTXeNgoaiThanh = 0;
+        double tongDTXeNoiThanh = 0;
+        for(int i = 0; i < dschuyenxe.size(); i++){
             if(dschuyenxe.get(i) instanceof ChuyenXeNgoaiThanh){
-                tongDoanhThu = tongDoanhThu + dschuyenxe.get(i).getDoanhThu();
+                tongDTXeNgoaiThanh += dschuyenxe.get(i).doanhThu;
+            }
+            else if(dschuyenxe.get(i) instanceof ChuyenXeNoiThanh){
+                tongDTXeNoiThanh += dschuyenxe.get(i).doanhThu;
             }
         }
-        return tongDoanhThu;
+        System.out.println("Tổng doanh thu xe ngoại thành: " + tongDTXeNgoaiThanh);
+        System.out.println("Tổng doanh thu xe nội thành: " + tongDTXeNoiThanh);
+ 
+        
     }
     
-    public float tongDoanhThuHaiLoaiXe(ArrayList<ChuyenXe> dschuyenxe){
-        float tongDoanhThu = 0;
-        for(int i = 0; i< dschuyenxe.size(); i++){  
-            tongDoanhThu = tongDoanhThu + dschuyenxe.get(i).getDoanhThu();
-        }
-        return tongDoanhThu;
+    public void tongDoanhThuHaiLoaiXe(){
+        double tongDoanhThuHaiLoaiXe = 0;
+        for(int i = 0; i < dschuyenxe.size(); i++){
+                tongDoanhThuHaiLoaiXe += dschuyenxe.get(i).doanhThu;
+            }
+        System.out.println("Tổng doanh thu cả hai loại xe: " + tongDoanhThuHaiLoaiXe);
     }
+
+    
+    
 }

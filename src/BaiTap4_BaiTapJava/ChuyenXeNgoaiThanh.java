@@ -11,23 +11,20 @@ package BaiTap4_BaiTapJava;
  */
 public class ChuyenXeNgoaiThanh extends ChuyenXe{
     
-    public int soNgayDi; // số ngày đi dc
-    public String noiDen;
+    int soNgayDi; // số ngày đi dc
+    String noiDen;
 
-    public int getSoNgayDi() {
-        return soNgayDi;
-    }
-
-    public void setSoNgayDi(int soNgayDi) {
-        this.soNgayDi = soNgayDi;
-    }
-    
-    
-    
-    public ChuyenXeNgoaiThanh(String maSoChuyen, String hoTenTaiXe, String soXe, float doanhThu, String noiDen, int soNgayDi) {
+    public ChuyenXeNgoaiThanh(int soNgayDi, String noiDen, String maSoChuyen, String hoTenTaiXe, String soXe, float doanhThu) {
         super(maSoChuyen, hoTenTaiXe, soXe, doanhThu);
         this.soNgayDi = soNgayDi;
         this.noiDen = noiDen;
     }
-    
+
+    @Override
+    public void inDS() {
+        super.inDS(); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("Số ngày đi: " + this.soNgayDi);
+        System.out.println("Nơi đến: " + this.noiDen);
+        System.out.println("-----------------------");
+    }
 }

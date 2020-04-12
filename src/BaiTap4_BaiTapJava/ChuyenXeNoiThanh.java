@@ -11,27 +11,11 @@ package BaiTap4_BaiTapJava;
  */
 public class ChuyenXeNoiThanh extends ChuyenXe{
 
-    public float soKm; // số km đi được
-    public String soTuyen;
-    
-    public float getSoKm() {
-        return soKm;
-    }
-
-    public void setSoKm(float soKm) {
-        this.soKm = soKm;
-    }
-
-    public String getSoTuyen() {
-        return soTuyen;
-    }
-
-    public void setSoTuyen(String soTuyen) {
-        this.soTuyen = soTuyen;
-    }
+    double soKm; // số km đi được
+    String soTuyen;
     
     
-    public ChuyenXeNoiThanh(String maSoChuyen, String hoTenTaiXe, String soXe, float doanhThu, String soTuyen, float soKm) {
+    public ChuyenXeNoiThanh(String maSoChuyen, String hoTenTaiXe, String soXe, float doanhThu, String soTuyen, double soKm) {
         super(maSoChuyen, hoTenTaiXe, soXe, doanhThu);
         this.soKm = soKm;
         this.soTuyen = soTuyen;
@@ -39,9 +23,12 @@ public class ChuyenXeNoiThanh extends ChuyenXe{
     
     //public float soKm; // số km đi được
 
-    
-    
-    
-    
+    @Override
+    public void inDS() {
+        super.inDS(); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("Số Km: " + this.soKm);
+        System.out.println("Số Tuyến: " + this.soTuyen);
+        System.out.println("-----------------------");
+    }
     
 }
